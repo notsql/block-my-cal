@@ -1,0 +1,44 @@
+{
+  "name": "repo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vp run -r dev",
+    "build": "vp run -r build",
+    "check-types": "vp run -r check-types",
+    "check": "vp check && vp run -r check-types",
+    "lint": "vp lint",
+    "format": "vp fmt",
+    "staged": "vp staged",
+    "hooks:setup": "vp config",
+    "dev:web": "vp run --filter web dev",
+    "dev:server": "vp run --filter server dev",
+    "db:push": "vp run --filter @repo/db db:push",
+    "db:studio": "vp run --filter @repo/db db:studio",
+    "db:generate": "vp run --filter @repo/db db:generate",
+    "db:migrate": "vp run --filter @repo/db db:migrate",
+    "deploy": "vp run --filter @repo/infra deploy",
+    "destroy": "vp run --filter @repo/infra destroy"
+  },
+  "dependencies": {
+    "@repo/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "catalog:",
+    "@repo/config": "workspace:*",
+    "@types/node": "catalog:",
+    "rolldown": "1.1.4",
+    "typescript": "catalog:",
+    "vite-plus": "0.2.2"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.2"
+  },
+  "packageManager": "pnpm@11.11.0"
+}
