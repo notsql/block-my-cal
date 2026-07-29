@@ -21,11 +21,9 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "catalog:",
     "@repo/config": "workspace:*",
     "@types/node": "catalog:",
-    "alchemy": "catalog:",
-    "tsdown": "^0.22.3",
+    "tsdown": "^0.22.14",
     "typescript": "catalog:",
     "wrangler": "catalog:"
   }

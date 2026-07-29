@@ -11,13 +11,12 @@ export default defineConfig({
       "apps/web/src/routeTree.gen.ts",
       "apps/server/dist/**",
       "packages/db/dist/**",
-      ".alchemy/**",
       ".wrangler/**",
       "**/.wrangler/**",
     ],
     options: {
-      typeAware: false,
-      typeCheck: false,
+      typeAware: true,
+      typeCheck: true,
     },
   },
   fmt: {
@@ -30,7 +29,6 @@ export default defineConfig({
       "apps/web/src/routeTree.gen.ts",
       "apps/server/dist/**",
       "packages/db/dist/**",
-      ".alchemy/**",
       ".wrangler/**",
       "**/.wrangler/**",
     ],

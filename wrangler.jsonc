@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Top-level configuration
+  "name": "block-my-cal-prd",
+  "main": "apps/server/dist/index.mjs",
+  // Set this to today's date
+  "compatibility_date": "2026-07-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "keep_vars": true,
+  "observability": {
+    "enabled": true,
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "apps/web/dist",
+  },
+  "env": {
+    "dev": {
+      "vars": {
+        "CORS_ORIGIN": "localhost:3000",
+        "BETTER_AUTH_URL": "localhost:3001",
+      },
+    },
+    "prd": {
+      "vars": {
+        "CORS_ORIGIN": "",
+        "BETTER_AUTH_URL": "",
+      },
+    },
+  },
+  "secrets": {
+    "required": ["BETTER_AUTH_SECRET", "DATABASE_URL"],
+  },
+}

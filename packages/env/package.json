@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@repo/config": "workspace:*",
-    "@repo/infra": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   }

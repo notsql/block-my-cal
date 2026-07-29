@@ -74,14 +74,14 @@ If you want to add app-specific blocks instead of shared primitives, run the sha
 
 ## Deployment
 
-### Cloudflare via Alchemy
+### Cloudflare Workers via Wrangler
 
-- Target: web + server
-- Dev: pnpm run dev
-- Deploy: pnpm run deploy
-- Destroy: pnpm run destroy
+- Target: web + server (single Worker serving the built assets)
+- Dev: `pnpm run dev`
+- Build: `pnpm run build`
+- Deploy: `wrangler deploy` (config in `wrangler.jsonc`)
 
-For more details, see the guide on [Deploying to Cloudflare with Alchemy](https://www.better-t-stack.dev/docs/guides/cloudflare-alchemy).
+Set the required secrets (`BETTER_AUTH_SECRET`, `DATABASE_URL`) with `wrangler secret put <NAME>`.
 
 ## Git Hooks and Formatting
 

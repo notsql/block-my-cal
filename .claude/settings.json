@@ -1,0 +1,21 @@
+{
+  "autoMemoryEnabled": true,
+  "autoMemoryDirectory": "./.claude/memory",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm run check",
+            "timeout": 300,
+            "async": true,
+            "asyncRewake": true,
+            "rewakeSummary": "pnpm run check failed",
+            "statusMessage": "Running pnpm run check"
+          }
+        ]
+      }
+    ]
+  }
+}
