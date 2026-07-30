@@ -54,3 +54,4 @@ coverage
 tmp
 temp
 worker-configuration.d.ts
+.wrangler
