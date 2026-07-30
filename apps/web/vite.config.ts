@@ -1,7 +1,8 @@
+import { cloudflare } from "@cloudflare/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
-import { defineConfig } from "vite-plus";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   server: {
@@ -11,6 +12,7 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   plugins: [
+    cloudflare({ inspectorPort: 3010 }),
     tailwindcss(),
     tanstackStart({
       prerender: {

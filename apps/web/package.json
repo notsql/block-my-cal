@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vp build",
-    "serve": "vp preview",
-    "dev:bare": "vp dev"
+    "build": "vite build",
+    "serve": "vite preview",
+    "dev": "vite dev"
   },
   "dependencies": {
     "@orpc/client": "catalog:",
@@ -31,7 +31,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.48.0",
+    "@cloudflare/vite-plugin": "catalog:",
     "@repo/config": "workspace:*",
     "@tanstack/react-query-devtools": "^5.101.2",
     "@tanstack/react-router-devtools": "^1.167.0",
