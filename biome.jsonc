@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/biome/core", "ultracite/biome/react"],
+  "linter": {
+    "rules": {
+      "performance": {
+        "noNamespaceImport": "off",
+        "noBarrelFile": "warn",
+      },
+      "style": {
+        "useConsistentTypeDefinitions": {
+          "level": "info",
+          "options": {
+            "style": "interface",
+          },
+        },
+      },
+    },
+  },
+  "overrides": [
+    {
+      // Biome can't parse Astro's template syntax, so it wrongly reports the
+      // component/layout imports in the frontmatter as unused and strips them
+      // on `fix`. Disable linting for .astro files to avoid that destructive fix.
+      "includes": ["**/*.astro"],
+      "linter": { "enabled": false },
+    },
+  ],
+}

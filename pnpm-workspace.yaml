@@ -31,24 +31,34 @@ catalog:
   "@vitejs/plugin-react": ^6.0.4
   "@tanstack/react-router": ^1.170.18
   "@tanstack/react-start": ^1.168.32
+  "@cloudflare/vite-plugin": ^1.48.0
 minimumReleaseAgeExclude:
-  - '@cloudflare/vite-plugin@1.48.0'
-  - '@orpc/client@1.14.13'
-  - '@orpc/contract@1.14.13'
-  - '@orpc/interop@1.14.13'
-  - '@orpc/json-schema@1.14.13'
-  - '@orpc/openapi-client@1.14.13'
-  - '@orpc/openapi@1.14.13'
-  - '@orpc/server@1.14.13'
-  - '@orpc/shared@1.14.13'
-  - '@orpc/standard-server-aws-lambda@1.14.13'
-  - '@orpc/standard-server-fastify@1.14.13'
-  - '@orpc/standard-server-fetch@1.14.13'
-  - '@orpc/standard-server-node@1.14.13'
-  - '@orpc/standard-server-peer@1.14.13'
-  - '@orpc/standard-server@1.14.13'
-  - '@orpc/tanstack-query@1.14.13'
-  - '@orpc/zod@1.14.13'
+  - "@cloudflare/vite-plugin@1.48.0"
+  - "@orpc/client@1.14.13"
+  - "@orpc/contract@1.14.13"
+  - "@orpc/interop@1.14.13"
+  - "@orpc/json-schema@1.14.13"
+  - "@orpc/openapi-client@1.14.13"
+  - "@orpc/openapi@1.14.13"
+  - "@orpc/server@1.14.13"
+  - "@orpc/shared@1.14.13"
+  - "@orpc/standard-server-aws-lambda@1.14.13"
+  - "@orpc/standard-server-fastify@1.14.13"
+  - "@orpc/standard-server-fetch@1.14.13"
+  - "@orpc/standard-server-node@1.14.13"
+  - "@orpc/standard-server-peer@1.14.13"
+  - "@orpc/standard-server@1.14.13"
+  - "@orpc/tanstack-query@1.14.13"
+  - "@orpc/zod@1.14.13"
   - jsdom@30.0.1
   - miniflare@4.20260722.1
   - wrangler@4.115.0
+  - "@biomejs/biome@2.5.6"
+  - "@biomejs/cli-darwin-arm64@2.5.6"
+  - "@biomejs/cli-darwin-x64@2.5.6"
+  - "@biomejs/cli-linux-arm64-musl@2.5.6"
+  - "@biomejs/cli-linux-arm64@2.5.6"
+  - "@biomejs/cli-linux-x64-musl@2.5.6"
+  - "@biomejs/cli-linux-x64@2.5.6"
+  - "@biomejs/cli-win32-arm64@2.5.6"
+  - "@biomejs/cli-win32-x64@2.5.6"

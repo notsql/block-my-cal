@@ -7,20 +7,16 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vp run -r dev",
-    "build": "vp run -r build",
-    "check-types": "vp run -r check-types",
-    "check": "vp check && vp run -r check-types",
-    "lint": "vp lint",
-    "format": "vp fmt",
-    "staged": "vp staged",
-    "hooks:setup": "vp config",
-    "dev:web": "vp run --filter web dev",
-    "dev:server": "vp run --filter server dev",
-    "db:push": "vp run --filter @repo/db db:push",
-    "db:studio": "vp run --filter @repo/db db:studio",
-    "db:generate": "vp run --filter @repo/db db:generate",
-    "db:migrate": "vp run --filter @repo/db db:migrate"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "dev:web": "turbo -F web dev",
+    "dev:server": "turbo -F server dev",
+    "db:push": "turbo -F @repo/db db:push",
+    "db:generate": "turbo -F @repo/db db:generate",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "cf-types": "wrangler types"
   },
   "dependencies": {
     "@repo/env": "workspace:*",
@@ -28,15 +24,13 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.6",
     "@repo/config": "workspace:*",
     "@types/node": "catalog:",
-    "rolldown": "1.2.0",
+    "turbo": "^2.10.7",
     "typescript": "catalog:",
-    "vite-plus": "0.2.6",
+    "ultracite": "^7.9.4",
     "wrangler": "catalog:"
-  },
-  "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.6"
   },
   "packageManager": "pnpm@11.17.0"
 }

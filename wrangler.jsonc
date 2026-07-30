@@ -1,34 +1,45 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   // Top-level configuration
-  "name": "block-my-cal-prd",
+  "name": "bmc-app-prd",
   "main": "apps/server/dist/index.mjs",
   // Set this to today's date
-  "compatibility_date": "2026-07-11",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2026-07-29",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "keep_vars": true,
   "observability": {
-    "enabled": true,
+    "enabled": true
   },
   "assets": {
     "binding": "ASSETS",
-    "directory": "apps/web/dist",
+    "directory": "apps/web/dist"
   },
   "env": {
     "dev": {
       "vars": {
         "CORS_ORIGIN": "localhost:3000",
-        "BETTER_AUTH_URL": "localhost:3001",
+        "BETTER_AUTH_URL": "localhost:3001"
       },
     },
     "prd": {
       "vars": {
-        "CORS_ORIGIN": "",
-        "BETTER_AUTH_URL": "",
-      },
-    },
+        "CORS_ORIGIN": "bmc.notdns.me",
+        "BETTER_AUTH_URL": "bmc.notdns.me"
+      }
+    }
   },
   "secrets": {
-    "required": ["BETTER_AUTH_SECRET", "DATABASE_URL"],
+    "required": [
+      "BETTER_AUTH_SECRET"
+    ]
   },
+  // Add this to your wrangler.jsonc
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "50264a3589be4f05b2dd7306655be4eb"
+    }
+  ]
 }

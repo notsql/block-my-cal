@@ -9,8 +9,7 @@
     "start": "vite preview",
     "preview": "vite preview",
     "types:check": "fumadocs-mdx && tsc --noEmit",
-    "postinstall": "fumadocs-mdx",
-    "lint": "oxlint"
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@tanstack/react-router": "catalog:",
@@ -25,14 +24,13 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@types/mdx": "^2.0.14",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
-    "nitro": "3.0.260610-beta",
-    "oxlint": "^1.76.0",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"

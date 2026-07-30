@@ -1,11 +1,16 @@
-import { neon } from "@neondatabase/serverless";
+import { Client } from "pg";
 import { env } from "@repo/env/server";
-import { drizzle } from "drizzle-orm/neon-http";
+import { drizzle } from "drizzle-orm/node-postgres";
 import * as auth from "./schema/auth";
 import * as relations from "./schema/relations";
 import * as user from "./schema/user";
 
-export const db = drizzle(neon(env.DATABASE_URL || ""), {
+const client = new Client({
+  connectionString: env.HYPERDRIVE?.connectionString,
+});
+
+export const db = drizzle({
+  client,
   schema: {
     ...auth,
     ...user,

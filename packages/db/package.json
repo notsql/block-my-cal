@@ -16,15 +16,16 @@
     "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.1.0",
     "@paralleldrive/cuid2": "^3.3.0",
     "@repo/env": "workspace:*",
     "dotenv": "catalog:",
     "drizzle-orm": "catalog:",
+    "pg": "^8.22.0",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@repo/config": "workspace:*",
+    "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.10",
     "typescript": "catalog:"
   }

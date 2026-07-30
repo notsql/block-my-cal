@@ -53,3 +53,4 @@ coverage
 .cache
 tmp
 temp
+worker-configuration.d.ts
