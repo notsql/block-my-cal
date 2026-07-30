@@ -14,9 +14,9 @@ export default defineConfig({
     mdx(),
     tailwindcss(),
     tanstackStart({
-      prerender: {
-        enabled: true,
-      },
+      // prerender: {
+      //   enabled: true,
+      // },
     }),
     react(),
   ],
