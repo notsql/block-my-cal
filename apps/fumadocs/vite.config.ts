@@ -6,24 +6,22 @@ import mdx from "fumadocs-mdx/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  server: {
-    port: 3000,
-  },
   plugins: [
     cloudflare({ inspectorPort: 4010 }),
     mdx(),
     tailwindcss(),
     tanstackStart({
-      // prerender: {
-      //   enabled: true,
-      // },
+      pages: [{ path: "/api/search" }],
+      spa: {
+        enabled: true,
+        prerender: {
+          enabled: true,
+        },
+      },
     }),
     react(),
   ],
-  resolve: {
-    tsconfigPaths: true,
-    alias: {
-      tslib: "tslib/tslib.es6.js",
-    },
+  server: {
+    port: 3000,
   },
 });
