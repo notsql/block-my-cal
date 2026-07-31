@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bmc-server-prd",
+  "main": "./dist/index.mjs",
+  "compatibility_date": "2026-07-29",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "keep_vars": true,
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "dev": {
+      "main": "./src/index.ts",
+      "vars": {
+        "CORS_ORIGIN": "localhost:3000",
+        "BETTER_AUTH_URL": "localhost:3001"
+      },
+    },
+    "prd": {
+      "vars": {
+        "CORS_ORIGIN": "bmc.notdns.me",
+        "BETTER_AUTH_URL": "bmc.notdns.me"
+      }
+    }
+  },
+  "secrets": {
+    "required": [
+      "BETTER_AUTH_SECRET"
+    ]
+  },
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "50264a3589be4f05b2dd7306655be4eb"
+    }
+  ],
+  "dev": {
+    "port": 3002
+  }
+}
