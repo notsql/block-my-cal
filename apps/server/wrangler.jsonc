@@ -18,12 +18,10 @@
         "BETTER_AUTH_URL": "localhost:3001"
       },
     },
-    "prd": {
-      "vars": {
-        "CORS_ORIGIN": "bmc.notdns.me",
-        "BETTER_AUTH_URL": "bmc.notdns.me"
-      }
-    }
+  },
+  "vars": {
+    "CORS_ORIGIN": "bmc.notdns.me",
+    "BETTER_AUTH_URL": "bmc.notdns.me"
   },
   "secrets": {
     "required": [
