@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "serve": "vite preview",
-    "dev": "vite dev"
+    "preview": "vite preview",
+    "dev": "vite dev",
+    "cf-typegen": "wrangler types",
+    "postinstall": "npm run --silent cf-typegen"
   },
   "dependencies": {
     "@orpc/client": "catalog:",
-    "@orpc/server": "catalog:",
     "@orpc/tanstack-query": "^1.14.13",
     "@repo/api": "workspace:*",
     "@repo/env": "workspace:*",

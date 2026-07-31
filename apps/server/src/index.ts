@@ -7,9 +7,9 @@ import { createContext } from "@repo/api/lib/orpc";
 import { appRouter } from "@repo/api/router";
 import { auth } from "@repo/auth";
 import { env } from "@repo/env/server";
-import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import { Hono } from "hono/quick";
 
 const app = new Hono();
 
@@ -17,11 +17,11 @@ app.use(logger());
 app.use(
   "/*",
   cors({
-    origin: env.CORS_ORIGIN,
-    allowMethods: ["GET", "POST", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
+    allowMethods: ["GET", "POST", "OPTIONS"],
     credentials: true,
-  }),
+    origin: env.CORS_ORIGIN,
+  })
 );
 
 app.on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw));
@@ -51,8 +51,8 @@ app.use("/*", async (c, next) => {
   const context = await createContext({ context: c });
 
   const rpcResult = await rpcHandler.handle(c.req.raw, {
+    context,
     prefix: "/rpc",
-    context: context,
   });
 
   if (rpcResult.matched) {
@@ -69,10 +69,6 @@ app.use("/*", async (c, next) => {
   // }
 
   await next();
-});
-
-app.get("/", (c) => {
-  return c.text("OK");
 });
 
 export default app;
