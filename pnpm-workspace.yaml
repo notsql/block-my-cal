@@ -15,7 +15,7 @@ catalog:
   "@orpc/openapi": ^1.14.13
   "@orpc/zod": ^1.14.13
   better-auth: 1.6.25
-  wrangler: ^4.115.0
+  wrangler: ^4.116.0
   lucide-react: ^1.27.0
   next-themes: ^0.4.6
   react: ^19.2.8
@@ -51,8 +51,8 @@ minimumReleaseAgeExclude:
   - "@orpc/tanstack-query@1.14.13"
   - "@orpc/zod@1.14.13"
   - jsdom@30.0.1
-  - miniflare@4.20260722.1
-  - wrangler@4.115.0
+  - miniflare@4.20260722.1 || 4.20260730.0
+  - wrangler@4.115.0 || 4.116.0
   - "@biomejs/biome@2.5.6"
   - "@biomejs/cli-darwin-arm64@2.5.6"
   - "@biomejs/cli-darwin-x64@2.5.6"
